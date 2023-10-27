@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'i18next'],
   rules: {
     '@typescript-eslint/semi': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -39,5 +39,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'react/no-deprecated': 'off',
+    'i18next/no-literal-string': 2,
   },
 };
