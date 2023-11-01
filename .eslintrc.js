@@ -3,7 +3,11 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['standard-with-typescript', 'plugin:react/recommended'],
+  extends: [
+    'standard-with-typescript',
+    'plugin:react/recommended',
+    'plugin:i18next/recommended',
+  ],
   overrides: [
     {
       env: {
@@ -36,9 +40,9 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/consistent-indexed-object-style': 'off',
     '@typescript-eslint/naming-convention': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'react/no-deprecated': 'off',
-    'i18next/no-literal-string': 2,
   },
 };
