@@ -10,6 +10,10 @@ interface UseThemeResult {
 export const useTheme = (): UseThemeResult => {
   const { theme, setTheme } = useContext(ThemeContext);
 
+  if (!theme || !setTheme) {
+    throw new Error('Тема отсутствует');
+  }
+
   const toggleTheme = () => {
     const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
 
