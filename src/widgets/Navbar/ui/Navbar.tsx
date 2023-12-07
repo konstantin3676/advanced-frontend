@@ -1,26 +1,27 @@
+import {
+  Flex,
+  Link as ChakraLink,
+  Spacer,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
-import cls from './Navbar.module.scss';
-
-interface NavbarProps {
-  className?: string;
-}
-
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = () => {
   const { t } = useTranslation();
+  const bg = useColorModeValue('teal.100', 'teal.800');
 
   return (
-    <div className={classNames(cls.Navbar, {}, [className])}>
-      <div className={cls.links}>
-        <AppLink to='/' theme={AppLinkTheme.SECONDARY}>
+    <Flex px={5} h='var(--navbar-height)' bg={bg}>
+      <Spacer />
+      <Flex align='center' gap={4}>
+        <ChakraLink as={ReactRouterLink} to='/'>
           {t('main')}
-        </AppLink>
-        <AppLink to='/about' theme={AppLinkTheme.SECONDARY}>
+        </ChakraLink>
+        <ChakraLink as={ReactRouterLink} to='/about'>
           {t('about-us')}
-        </AppLink>
-      </div>
-    </div>
+        </ChakraLink>
+      </Flex>
+    </Flex>
   );
 };

@@ -1,39 +1,35 @@
+import { Box, Button, Flex, useColorModeValue } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
-import cls from './SideBar.module.scss';
-
-interface SideBarProps {
-  className?: string;
-}
-
-export const SideBar = ({ className }: SideBarProps) => {
-  const [collapsed, setCollapsed] = useState(false);
+export const SideBar = () => {
+  const [collapsed, setCollapsed] = useState(true);
 
   const { t } = useTranslation();
+
+  const bg = useColorModeValue('teal.50', 'teal.700');
 
   const toggle = () => {
     setCollapsed((prev) => !prev);
   };
 
   return (
-    <div
-      className={classNames(
-        cls.SideBar,
-        {
-          [cls.collapsed]: collapsed,
-        },
-        [className]
-      )}
+    <Box
+      pos='relative'
+      h='calc(100vh - var(--navbar-height))'
+      w={collapsed ? 'var(--sidebar-width-collapsed)' : 'var(--sidebar-width)'}
+      bg={bg}
+      sx={{
+        transition: 'width 0.3s',
+      }}
     >
-      <button onClick={toggle}>{t('toggle')}</button>
-      <div className={cls.switchers}>
+      <Button onClick={toggle}>{t('toggle')}</Button>
+      <Flex pos='absolute' justify='center' gap={5} bottom={5} w='100%'>
         <ThemeSwitcher />
-        <LangSwitcher className={cls.lang} />
-      </div>
-    </div>
+        <LangSwitcher />
+      </Flex>
+    </Box>
   );
 };

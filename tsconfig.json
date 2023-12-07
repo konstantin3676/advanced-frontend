@@ -1,16 +1,15 @@
 {
   "compilerOptions": {
-    "strictNullChecks": true,
-    "outDir": "./dist/",
-    "noImplicitAny": true,
+    "strict": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "module": "ESNext",
     "target": "es5",
     "jsx": "react-jsx",
-    "allowJs": true,
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
+    "outDir": "./dist/",
     "paths": {
       "*": ["./src/*"]
     }

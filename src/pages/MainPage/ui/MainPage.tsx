@@ -1,9 +1,10 @@
+import { Box } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
 const MainPage = () => {
   const { t } = useTranslation();
 
-  return <div>{t('main-page')}</div>;
+  return <Box>{t('main-page')}</Box>;
 };
 
 export default MainPage;

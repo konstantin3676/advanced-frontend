@@ -1,16 +1,14 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Loader } from 'shared/ui/Loader/Loader';
+import { Flex, Spinner } from '@chakra-ui/react';
 
-import cls from './PageLoader.module.scss';
-
-interface PageLoaderProps {
-  className?: string;
-}
-
-export const PageLoader = ({ className }: PageLoaderProps) => {
+export const PageLoader = () => {
   return (
-    <div className={classNames(cls.PageLoader, {}, [className])}>
-      <Loader />
-    </div>
+    <Flex
+      align='center'
+      justify='center'
+      grow={1}
+      minH='calc(100vh - var(--navbar-height))'
+    >
+      <Spinner size='xl' />
+    </Flex>
   );
 };

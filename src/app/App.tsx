@@ -1,26 +1,18 @@
 import './styles/index.scss';
 
+import { Box, Flex } from '@chakra-ui/react';
 import { AppRouter } from 'app/providers/router';
-import { useTheme } from 'app/providers/ThemeProvider';
-import { Suspense } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { SideBar } from 'widgets/SideBar';
 
-const App = () => {
-  const { theme } = useTheme();
-
+export const App = () => {
   return (
-    <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback=''>
-        <Navbar />
-        <div className='content-page'>
-          <SideBar />
-          <AppRouter />
-        </div>
-      </Suspense>
-    </div>
+    <Box minH='100vh'>
+      <Navbar />
+      <Flex>
+        <SideBar />
+        <AppRouter />
+      </Flex>
+    </Box>
   );
 };
-
-export default App;

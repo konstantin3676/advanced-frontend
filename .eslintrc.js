@@ -25,6 +25,7 @@ module.exports = {
   },
   plugins: ['react', 'i18next'],
   rules: {
+    '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/semi': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/member-delimiter-style': 'off',
