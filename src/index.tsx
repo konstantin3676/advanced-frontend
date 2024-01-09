@@ -4,6 +4,7 @@ import { theme } from 'app/styles/theme';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 
 import { App } from './app/App';
 
@@ -12,9 +13,11 @@ const root = createRoot(container!);
 
 root.render(
   <BrowserRouter>
-    <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <App />
-    </ChakraProvider>
+    <ErrorBoundary>
+      <ChakraProvider theme={theme}>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <App />
+      </ChakraProvider>
+    </ErrorBoundary>
   </BrowserRouter>
 );

@@ -42,8 +42,10 @@ module.exports = {
     '@typescript-eslint/consistent-indexed-object-style': 'off',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/indent': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'react/no-deprecated': 'off',
+    'n/handle-callback-err': 'off',
   },
 };

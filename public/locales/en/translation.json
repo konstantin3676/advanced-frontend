@@ -4,5 +4,8 @@
   "language": "Русский",
   "main": "Main",
   "toggle": "Toggle",
-  "page-not-found": "Page not found"
+  "page-not-found": "Page not found",
+  "page-error": "An unexpected error has occurred",
+  "refresh-page": "Refresh the page",
+  "throw-error": "Throw an error"
 }

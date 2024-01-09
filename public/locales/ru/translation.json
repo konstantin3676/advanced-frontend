@@ -4,5 +4,8 @@
   "language": "English",
   "main": "Главная",
   "toggle": "Переключить",
-  "page-not-found": "Страница не найдена"
+  "page-not-found": "Страница не найдена",
+  "page-error": "Произошла непредвиденная ошибка",
+  "refresh-page": "Обновить страницу",
+  "throw-error": "Выбросить ошибку"
 }
