@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
-export const SideBar = () => {
+export const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(true);
 
   const { t } = useTranslation();
@@ -17,6 +17,7 @@ export const SideBar = () => {
 
   return (
     <Box
+      data-testid='sidebar'
       pos='relative'
       h='calc(100vh - var(--navbar-height))'
       w={collapsed ? 'var(--sidebar-width-collapsed)' : 'var(--sidebar-width)'}

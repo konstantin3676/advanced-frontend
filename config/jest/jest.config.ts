@@ -17,6 +17,7 @@ const config: Config = {
 
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: ['node_modules'],
+  modulePaths: ['<rootDir>src'],
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
@@ -32,6 +33,7 @@ const config: Config = {
 
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 
   // The glob patterns Jest uses to detect test files
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
