@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
-import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation';
+import { componentRender } from 'shared/config/tests/componentRender';
 import { Sidebar } from 'widgets/Sidebar';
 
 describe('Sidebar', () => {
   test('hasSidebar', () => {
-    renderWithTranslation(<Sidebar />);
+    componentRender(<Sidebar />);
 
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });

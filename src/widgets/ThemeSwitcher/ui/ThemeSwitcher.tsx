@@ -1,12 +1,16 @@
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { Button, useColorMode } from '@chakra-ui/react';
+import { Button, Icon, useColorMode } from '@chakra-ui/react';
+import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
 
 export const ThemeSwitcher = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Button onClick={toggleColorMode}>
-      {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+      {colorMode === 'light' ? (
+        <Icon as={MdOutlineDarkMode} boxSize={6} />
+      ) : (
+        <Icon as={MdOutlineLightMode} boxSize={6} />
+      )}
     </Button>
   );
 };

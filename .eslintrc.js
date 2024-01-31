@@ -53,5 +53,6 @@ module.exports = {
     'react/prop-types': 'off',
     'react/no-deprecated': 'off',
     'n/handle-callback-err': 'off',
+    'multiline-ternary': 'off',
   },
 };

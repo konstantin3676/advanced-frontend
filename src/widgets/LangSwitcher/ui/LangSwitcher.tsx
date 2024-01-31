@@ -1,12 +1,20 @@
 import { Button } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
-export const LangSwitcher = () => {
+interface Props {
+  short: boolean;
+}
+
+export const LangSwitcher = ({ short }: Props) => {
   const { t, i18n } = useTranslation();
 
   const toggle = async () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
   };
 
-  return <Button onClick={toggle}>{t('language')}</Button>;
+  return (
+    <Button minW='14' onClick={toggle}>
+      {t(short ? 'short-language' : 'language')}
+    </Button>
+  );
 };
