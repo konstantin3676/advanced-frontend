@@ -13,6 +13,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
+    'plugin:react-hooks/recommended',
   ],
   overrides: [
     {

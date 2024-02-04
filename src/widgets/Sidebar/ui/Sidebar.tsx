@@ -16,8 +16,8 @@ import {
 } from 'react-icons/md';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { LangSwitcher } from 'widgets/LangSwitcher';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 
 export const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(true);
