@@ -1,7 +1,7 @@
 import './styles/index.scss';
 
 import { Box, Flex } from '@chakra-ui/react';
-import { AppRouter } from 'app/providers/router';
+import { AppRouter } from 'app/providers/AppRouter';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
