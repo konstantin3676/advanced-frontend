@@ -1,35 +1,26 @@
 import {
-  Button,
   Modal,
-  ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
 } from '@chakra-ui/react';
-import { useTranslation } from 'react-i18next';
 
 interface Props {
-  isOpen: boolean;
   title: string;
-  children: React.ReactNode;
+  isOpen: boolean;
   onClose: () => void;
+  children: React.ReactNode;
 }
 
-export const ModalDialog = ({ isOpen, title, children, onClose }: Props) => {
-  const { t } = useTranslation();
-
+export const ModalDialog = ({ title, isOpen, children, onClose }: Props) => {
   return (
     <Modal isCentered isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>{title}</ModalHeader>
         <ModalCloseButton />
-        <ModalBody>{children}</ModalBody>
-        <ModalFooter>
-          <Button onClick={onClose}>{t('close')}</Button>
-        </ModalFooter>
+        {children}
       </ModalContent>
     </Modal>
   );

@@ -11,5 +11,7 @@
   "throw-error": "Throw an error",
   "login": "Login",
   "close": "Close",
-  "auth": "Authorization"
+  "auth": "Authorization",
+  "username": "Username",
+  "password": "Password"
 }
