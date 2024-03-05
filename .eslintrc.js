@@ -53,6 +53,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'react/no-deprecated': 'off',
+    'react/display-name': 'off',
     'n/handle-callback-err': 'off',
     'multiline-ternary': 'off',
   },

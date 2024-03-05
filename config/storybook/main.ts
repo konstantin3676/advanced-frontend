@@ -8,6 +8,7 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
     '@chakra-ui/storybook-addon',
+    'storybook-react-i18next',
   ],
   framework: {
     name: '@storybook/react-webpack5',

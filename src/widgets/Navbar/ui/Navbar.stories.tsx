@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+
 import { Navbar } from './Navbar';
 
 const meta = {
@@ -12,5 +14,14 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
-  render: () => <Navbar />,
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          id: '1',
+          username: 'username',
+        },
+      },
+    }),
+  ],
 };

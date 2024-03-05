@@ -12,6 +12,8 @@
   "login": "Login",
   "close": "Close",
   "auth": "Authorization",
-  "username": "Username",
-  "password": "Password"
+  "user-name": "Username",
+  "password": "Password",
+  "logout": "Logout",
+  "auth-error": "Invalid username or password"
 }
