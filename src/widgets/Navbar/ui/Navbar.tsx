@@ -5,7 +5,7 @@ import {
   Spacer,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { useAppDispatch } from 'app/providers/StoreProvider/config/hooks';
+import { useAppDispatch } from 'app/providers/StoreProvider';
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { useState } from 'react';
@@ -62,7 +62,9 @@ export const Navbar = () => {
           {t('login')}
         </Button>
       </Header>
-      <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      )}
     </>
   );
 };

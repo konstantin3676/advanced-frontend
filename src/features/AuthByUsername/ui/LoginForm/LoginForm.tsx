@@ -13,16 +13,30 @@ import {
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'app/providers/StoreProvider/config/hooks';
+import { useAppDispatch } from 'app/providers/StoreProvider';
+import {
+  DynamicModuleLoader,
+  ReducerList,
+} from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 
-import { getLoginState } from '../../model/selectors/getLoginState';
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { getLoginUsername } from '../../model/selectors/getLoginUsename';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading';
+import { getLoginError } from '../../model/selectors/getLoginError';
 
-export const LoginForm = () => {
+const initialReducers: ReducerList = {
+  loginForm: loginReducer,
+};
+
+const LoginForm = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-  const { username, password, error, isLoading } = useSelector(getLoginState);
+  const username = useSelector(getLoginUsername);
+  const password = useSelector(getLoginPassword);
+  const isLoading = useSelector(getLoginIsLoading);
+  const error = useSelector(getLoginError);
   const usernameInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -42,34 +56,38 @@ export const LoginForm = () => {
   };
 
   return (
-    <Box as='form'>
-      <ModalBody>
-        <VStack spacing={3}>
-          {error && (
-            <Alert status='error'>
-              <AlertIcon />
-              {t('auth-error')}
-            </Alert>
-          )}
-          <FormControl>
-            <FormLabel>{t('user-name')}</FormLabel>
-            <Input
-              ref={usernameInputRef}
-              value={username}
-              onChange={onChangeUsername}
-            />
-          </FormControl>
-          <FormControl>
-            <FormLabel>{t('password')}</FormLabel>
-            <Input value={password} onChange={onChangePassword} />
-          </FormControl>
-        </VStack>
-      </ModalBody>
-      <ModalFooter>
-        <Button isDisabled={isLoading} onClick={onLoginClick}>
-          {t('login')}
-        </Button>
-      </ModalFooter>
-    </Box>
+    <DynamicModuleLoader reducers={initialReducers}>
+      <Box as='form'>
+        <ModalBody>
+          <VStack spacing={3}>
+            {error && (
+              <Alert status='error'>
+                <AlertIcon />
+                {t('auth-error')}
+              </Alert>
+            )}
+            <FormControl>
+              <FormLabel>{t('user-name')}</FormLabel>
+              <Input
+                ref={usernameInputRef}
+                value={username}
+                onChange={onChangeUsername}
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>{t('password')}</FormLabel>
+              <Input value={password} onChange={onChangePassword} />
+            </FormControl>
+          </VStack>
+        </ModalBody>
+        <ModalFooter>
+          <Button isDisabled={isLoading} onClick={onLoginClick}>
+            {t('login')}
+          </Button>
+        </ModalFooter>
+      </Box>
+    </DynamicModuleLoader>
   );
 };
+
+export default LoginForm;

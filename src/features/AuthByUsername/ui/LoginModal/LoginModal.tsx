@@ -1,6 +1,9 @@
-import { LoginForm } from 'features/AuthByUsername/ui/LoginForm/LoginForm';
 import { useTranslation } from 'react-i18next';
 import { ModalDialog } from 'shared/ui/ModalDialog/ModalDialog';
+import { Suspense } from 'react';
+import { Fallback } from 'widgets/Fallback';
+
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
 interface Props {
   isOpen: boolean;
@@ -12,7 +15,9 @@ export const LoginModal = ({ isOpen, onClose }: Props) => {
 
   return (
     <ModalDialog title={t('auth')} isOpen={isOpen} onClose={onClose}>
-      <LoginForm />
+      <Suspense fallback={<Fallback height='244px' />}>
+        <LoginFormAsync />
+      </Suspense>
     </ModalDialog>
   );
 };

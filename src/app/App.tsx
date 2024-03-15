@@ -2,7 +2,7 @@ import './styles/index.scss';
 
 import { Box, Flex } from '@chakra-ui/react';
 import { AppRouter } from 'app/providers/AppRouter';
-import { useAppDispatch } from 'app/providers/StoreProvider/config/hooks';
+import { useAppDispatch } from 'app/providers/StoreProvider';
 import { userActions } from 'entities/User';
 import { useEffect } from 'react';
 import { Navbar } from 'widgets/Navbar';

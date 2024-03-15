@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { ThunkConfig } from 'app/providers/StoreProvider';
 import axios from 'axios';
 import { User, userActions } from 'entities/User';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
@@ -11,9 +12,7 @@ interface Props {
 export const loginByUsername = createAsyncThunk<
   User,
   Props,
-  {
-    rejectValue: string;
-  }
+  ThunkConfig<string>
 >('login/loginByUsername', async (authData, thunkApi) => {
   try {
     const { data } = await axios.post<User>(

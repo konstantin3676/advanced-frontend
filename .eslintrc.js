@@ -50,6 +50,7 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/no-dynamic-delete': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'react/no-deprecated': 'off',
