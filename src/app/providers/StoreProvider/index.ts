@@ -6,4 +6,5 @@ export type {
   StateSchemaKey,
   ReduxStoreWithManager,
   ThunkConfig,
+  ThunkExtraArg,
 } from './config/StateSchema';
