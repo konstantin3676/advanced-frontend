@@ -1,28 +1,14 @@
-import {
-  Fade,
-  Flex,
-  Icon,
-  IconButton,
-  Link as ChakraLink,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Flex, Icon, IconButton, useColorModeValue } from '@chakra-ui/react';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import {
-  MdChevronLeft,
-  MdChevronRight,
-  MdInfoOutline,
-  MdOutlineHome,
-} from 'react-icons/md';
-import { Link as ReactRouterLink } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 
+import { sidebarItemList } from '../model/items';
+import { SidebarItem } from './SidebarItem';
+
 export const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(true);
-
-  const { t } = useTranslation();
 
   const bg = useColorModeValue('teal.50', 'teal.700');
 
@@ -58,18 +44,9 @@ export const Sidebar = () => {
           },
         }}
       >
-        <ChakraLink as={ReactRouterLink} to={RoutePath.main}>
-          <Icon as={MdOutlineHome} boxSize={6} />
-          <Fade in={!collapsed} unmountOnExit>
-            {t('main')}
-          </Fade>
-        </ChakraLink>
-        <ChakraLink as={ReactRouterLink} to={RoutePath.about}>
-          <Icon as={MdInfoOutline} boxSize={6} />
-          <Fade in={!collapsed} unmountOnExit>
-            {t('about-us')}
-          </Fade>
-        </ChakraLink>
+        {sidebarItemList.map((item) => (
+          <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+        ))}
       </Flex>
       <Flex
         justify='center'

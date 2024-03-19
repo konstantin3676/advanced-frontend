@@ -1,6 +1,6 @@
 export { StoreProvider } from './ui/StoreProvider';
 export { createReduxStore } from './config/store';
-export { useAppDispatch } from './config/hooks';
+export type { AppDispatch } from './config/store';
 export type {
   StateSchema,
   StateSchemaKey,

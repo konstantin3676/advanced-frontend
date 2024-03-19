@@ -5,12 +5,12 @@ import {
   Spacer,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { useAppDispatch } from 'app/providers/StoreProvider';
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export const Navbar = () => {
   const bg = useColorModeValue('teal.100', 'teal.800');

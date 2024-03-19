@@ -2,9 +2,9 @@ import './styles/index.scss';
 
 import { Box, Flex } from '@chakra-ui/react';
 import { AppRouter } from 'app/providers/AppRouter';
-import { useAppDispatch } from 'app/providers/StoreProvider';
 import { userActions } from 'entities/User';
 import { useEffect } from 'react';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 

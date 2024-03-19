@@ -16,7 +16,7 @@ export const LoginModal = ({ isOpen, onClose }: Props) => {
   return (
     <ModalDialog title={t('auth')} isOpen={isOpen} onClose={onClose}>
       <Suspense fallback={<Fallback height='244px' />}>
-        <LoginFormAsync />
+        <LoginFormAsync onSuccess={onClose} />
       </Suspense>
     </ModalDialog>
   );

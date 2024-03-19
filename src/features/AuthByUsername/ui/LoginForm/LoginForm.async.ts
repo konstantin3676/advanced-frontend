@@ -1,6 +1,8 @@
 import { lazy } from 'react';
 
-export const LoginFormAsync = lazy(
+import { LoginFormProps } from './LoginForm';
+
+export const LoginFormAsync = lazy<React.FC<LoginFormProps>>(
   () =>
     new Promise((resolve) => {
       // @ts-ignore

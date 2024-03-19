@@ -13,11 +13,11 @@ import {
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'app/providers/StoreProvider';
 import {
   DynamicModuleLoader,
   ReducerList,
-} from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
@@ -30,7 +30,11 @@ const initialReducers: ReducerList = {
   loginForm: loginReducer,
 };
 
-const LoginForm = () => {
+export interface LoginFormProps {
+  onSuccess: () => void;
+}
+
+const LoginForm = ({ onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const username = useSelector(getLoginUsername);
@@ -51,8 +55,12 @@ const LoginForm = () => {
     dispatch(loginActions.setPassword(e.target.value));
   };
 
-  const onLoginClick = () => {
-    dispatch(loginByUsername({ username, password }));
+  const onLoginClick = async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
   };
 
   return (
