@@ -16,5 +16,8 @@
   "password": "Password",
   "logout": "Logout",
   "auth-error": "Invalid username or password",
-  "profile": "Profile"
+  "profile": "Profile",
+  "firstname": "Firstname",
+  "lastname": "Lastname",
+  "edit": "Edit"
 }
