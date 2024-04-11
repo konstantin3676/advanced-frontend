@@ -19,5 +19,15 @@
   "profile": "Profile",
   "firstname": "Firstname",
   "lastname": "Lastname",
-  "edit": "Edit"
+  "edit": "Edit",
+  "profile-error": "An error occurred while uploading the profile",
+  "please-refresh-page": "Please refresh the page",
+  "cancel": "Cancel",
+  "save": "Save",
+  "age": "Age",
+  "city": "City",
+  "username": "User name",
+  "avatar": "Avatar",
+  "country": "Country",
+  "currency": "Currency"
 }

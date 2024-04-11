@@ -1,9 +1,9 @@
 import { Flex } from '@chakra-ui/react';
 import {
+  EditableProfileCard,
   fetchProfileData,
-  ProfileCard,
   profileReducer,
-} from 'entities/Profile';
+} from 'features/EditableProfileCard';
 import { useEffect } from 'react';
 import {
   DynamicModuleLoader,
@@ -25,7 +25,7 @@ const ProfilePage = () => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Flex justify='center'>
-        <ProfileCard />
+        <EditableProfileCard />
       </Flex>
     </DynamicModuleLoader>
   );

@@ -47,7 +47,7 @@ export const Navbar = () => {
     return (
       <Header>
         <Spacer />
-        <Button variant='ghost' onClick={onLogout}>
+        <Button variant='ghost' colorScheme='teal' onClick={onLogout}>
           {t('logout')}
         </Button>
       </Header>
@@ -58,7 +58,7 @@ export const Navbar = () => {
     <>
       <Header>
         <Spacer />
-        <Button variant='ghost' onClick={onShowModal}>
+        <Button variant='ghost' colorScheme='teal' onClick={onShowModal}>
           {t('login')}
         </Button>
       </Header>

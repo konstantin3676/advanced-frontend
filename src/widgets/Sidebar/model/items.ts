@@ -10,6 +10,7 @@ export interface SidebarItemType {
   path: string;
   text: string;
   icon: IconType;
+  authOnly?: boolean;
 }
 
 export const sidebarItemList: SidebarItemType[] = [
@@ -27,5 +28,6 @@ export const sidebarItemList: SidebarItemType[] = [
     path: RoutePath.profile,
     text: 'profile',
     icon: MdOutlineAccountCircle,
+    authOnly: true,
   },
 ];
