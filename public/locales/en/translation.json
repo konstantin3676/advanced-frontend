@@ -34,5 +34,6 @@
   "country-error": "Incorrect region",
   "no-data-error": "The data is not specified",
   "user-data-error": "First and last name are required",
-  "age-error": "Incorrect age"
+  "age-error": "Incorrect age",
+  "articles": "Articles"
 }

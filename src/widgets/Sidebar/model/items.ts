@@ -2,6 +2,7 @@ import { IconType } from 'react-icons';
 import {
   MdInfoOutline,
   MdOutlineAccountCircle,
+  MdOutlineArticle,
   MdOutlineHome,
 } from 'react-icons/md';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -28,6 +29,12 @@ export const sidebarItemList: SidebarItemType[] = [
     path: RoutePath.profile,
     text: 'profile',
     icon: MdOutlineAccountCircle,
+    authOnly: true,
+  },
+  {
+    path: RoutePath.articles,
+    text: 'articles',
+    icon: MdOutlineArticle,
     authOnly: true,
   },
 ];
