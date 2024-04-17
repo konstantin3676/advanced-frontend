@@ -22,7 +22,14 @@ export const App = () => {
       <Navbar />
       <Flex>
         <Sidebar />
-        {inited && <AppRouter />}
+        <Box
+          flexGrow={1}
+          p={5}
+          overflow='auto'
+          h='calc(100vh - var(--navbar-height))'
+        >
+          {inited && <AppRouter />}
+        </Box>
       </Flex>
     </Box>
   );

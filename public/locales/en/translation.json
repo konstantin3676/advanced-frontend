@@ -35,5 +35,6 @@
   "no-data-error": "The data is not specified",
   "user-data-error": "First and last name are required",
   "age-error": "Incorrect age",
-  "articles": "Articles"
+  "articles": "Articles",
+  "article-loading-error": "An error occurred while uploading the article"
 }
