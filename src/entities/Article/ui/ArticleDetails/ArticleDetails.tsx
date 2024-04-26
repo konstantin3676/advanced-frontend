@@ -1,11 +1,14 @@
 import {
-  Box,
   Center,
   Container,
   Flex,
+  Heading,
+  Icon,
+  Image,
   Skeleton,
   SkeletonCircle,
   SkeletonText,
+  Text,
 } from '@chakra-ui/react';
 import {
   DynamicModuleLoader,
@@ -15,7 +18,11 @@ import { useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { MdOutlineCalendarMonth, MdOutlineVisibility } from 'react-icons/md';
 
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -23,6 +30,7 @@ import {
 } from '../../model/selectors/articleDetails';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 
 const reducer: ReducerList = {
   articleDetails: articleDetailsReducer,
@@ -40,6 +48,19 @@ export const ArticleDetails = ({ id }: Props) => {
   const error = useSelector(getArticleDetailsError);
   let content;
 
+  const renderBlock = (block: ArticleBlock) => {
+    switch (block.type) {
+      case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent key={block.id} block={block} />;
+      case ArticleBlockType.IMAGE:
+        return <ArticleImageBlockComponent key={block.id} block={block} />;
+      case ArticleBlockType.TEXT:
+        return <ArticleTextBlockComponent key={block.id} block={block} />;
+      default:
+        return null;
+    }
+  };
+
   if (isLoading) {
     content = (
       <Flex direction='column' gap={6}>
@@ -56,7 +77,32 @@ export const ArticleDetails = ({ id }: Props) => {
   } else if (error) {
     content = <Center h='100%'>{t('article-loading-error')}</Center>;
   } else {
-    content = <Box>56565</Box>;
+    content = (
+      <Flex direction='column' gap={6}>
+        <Flex justify='center'>
+          <Image borderRadius='full' boxSize={28} src={article?.img} />
+        </Flex>
+        <Flex direction='column' gap={2}>
+          <Heading as='h2' size='2xl'>
+            {article?.title}
+          </Heading>
+          <Heading as='h3' size='md' fontWeight='semibold'>
+            {article?.subtitle}
+          </Heading>
+        </Flex>
+        <Flex direction='column' gap={1}>
+          <Flex align='center' gap={2}>
+            <Icon as={MdOutlineVisibility} boxSize={5} />
+            <Text>{article?.views}</Text>
+          </Flex>
+          <Flex align='center' gap={2}>
+            <Icon as={MdOutlineCalendarMonth} boxSize={5} />
+            <Text>{article?.createdAt}</Text>
+          </Flex>
+        </Flex>
+        {article?.blocks.map(renderBlock)}
+      </Flex>
+    );
   }
 
   useEffect(() => {

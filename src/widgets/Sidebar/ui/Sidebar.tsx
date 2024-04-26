@@ -22,7 +22,7 @@ export const Sidebar = () => {
       pos='relative'
       direction='column'
       justify='space-between'
-      p={5}
+      p={3}
       h='calc(100vh - var(--navbar-height))'
       w={collapsed ? 'var(--sidebar-width-collapsed)' : 'var(--sidebar-width)'}
       bg={bg}
@@ -34,13 +34,15 @@ export const Sidebar = () => {
         direction='column'
         align='flex-start'
         gap={5}
+        pl={4}
         sx={{
           '& a': {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: 1,
+            gap: 3,
             whiteSpace: 'nowrap',
+            fontWeight: 'medium',
           },
         }}
       >

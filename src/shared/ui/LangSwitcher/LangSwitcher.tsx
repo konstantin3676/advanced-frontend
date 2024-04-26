@@ -13,7 +13,7 @@ export const LangSwitcher = ({ short }: Props) => {
   };
 
   return (
-    <Button colorScheme='teal' minW='14' onClick={toggle}>
+    <Button size='sm' colorScheme='teal' minW='14' onClick={toggle}>
       {t(short ? 'short-language' : 'language')}
     </Button>
   );

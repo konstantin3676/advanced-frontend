@@ -5,7 +5,7 @@ export const ThemeSwitcher = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Button colorScheme='teal' onClick={toggleColorMode}>
+    <Button size='sm' minW={14} colorScheme='teal' onClick={toggleColorMode}>
       {colorMode === 'light' ? (
         <Icon as={MdOutlineDarkMode} boxSize={6} />
       ) : (
