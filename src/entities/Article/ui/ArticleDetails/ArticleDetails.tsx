@@ -1,6 +1,5 @@
 import {
   Center,
-  Container,
   Flex,
   Heading,
   Icon,
@@ -110,8 +109,6 @@ export const ArticleDetails = ({ id }: Props) => {
   }, [dispatch, id]);
 
   return (
-    <DynamicModuleLoader reducers={reducer}>
-      <Container maxW='container.md'>{content}</Container>
-    </DynamicModuleLoader>
+    <DynamicModuleLoader reducers={reducer}>{content}</DynamicModuleLoader>
   );
 };

@@ -24,7 +24,6 @@ export const App = () => {
         <Sidebar />
         <Box
           flexGrow={1}
-          p={5}
           overflow='auto'
           h='calc(100vh - var(--navbar-height))'
         >

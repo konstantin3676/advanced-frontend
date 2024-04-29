@@ -24,7 +24,7 @@ const ProfilePage = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Flex justify='center'>
+      <Flex justify='center' pt={5}>
         <EditableProfileCard />
       </Flex>
     </DynamicModuleLoader>

@@ -36,5 +36,8 @@
   "user-data-error": "First and last name are required",
   "age-error": "Incorrect age",
   "articles": "Articles",
-  "article-loading-error": "An error occurred while uploading the article"
+  "article-loading-error": "An error occurred while uploading the article",
+  "article-not-found": "Article not found",
+  "comments": "Comments",
+  "no-comments": "There are no comments"
 }
