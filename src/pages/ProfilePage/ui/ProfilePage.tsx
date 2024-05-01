@@ -5,6 +5,7 @@ import {
   profileReducer,
 } from 'features/EditableProfileCard';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import {
   DynamicModuleLoader,
   ReducerList,
@@ -17,10 +18,13 @@ const reducers: ReducerList = {
 
 const ProfilePage = () => {
   const dispatch = useAppDispatch();
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
-    dispatch(fetchProfileData());
-  }, [dispatch]);
+    if (id) {
+      dispatch(fetchProfileData(id));
+    }
+  }, [dispatch, id]);
 
   return (
     <DynamicModuleLoader reducers={reducers}>

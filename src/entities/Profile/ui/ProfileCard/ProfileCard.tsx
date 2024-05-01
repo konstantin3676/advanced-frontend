@@ -69,6 +69,7 @@ export const ProfileCard = ({
           <Flex justify='center'>
             <Image
               borderRadius='full'
+              objectFit='cover'
               boxSize={28}
               src={data.avatar}
               alt={t('avatar')}

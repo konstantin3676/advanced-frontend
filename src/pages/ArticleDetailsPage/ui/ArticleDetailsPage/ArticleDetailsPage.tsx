@@ -10,6 +10,7 @@ import {
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useEffect } from 'react';
+import { AddCommentForm } from 'features/AddCommentForm';
 
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
@@ -17,6 +18,7 @@ import {
   articleDetailsCommentsReducer,
   getArticleComments,
 } from '../../model/slice/articleDetailsCommentsSlice';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 
 const reducers: ReducerList = {
   articleDetailsComments: articleDetailsCommentsReducer,
@@ -28,6 +30,10 @@ const ArticleDetailsPage = () => {
   const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+
+  const handleSendComment = (text: string) => {
+    dispatch(addCommentForArticle(text));
+  };
 
   useEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -45,6 +51,7 @@ const ArticleDetailsPage = () => {
           <Heading as='h3' size='md' fontWeight='semibold'>
             {t('comments')}
           </Heading>
+          <AddCommentForm handleSendComment={handleSendComment} />
           <CommentList comments={comments} isLoading={commentsIsLoading} />
         </Flex>
       </Container>

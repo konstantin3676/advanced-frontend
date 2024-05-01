@@ -39,5 +39,7 @@
   "article-loading-error": "An error occurred while uploading the article",
   "article-not-found": "Article not found",
   "comments": "Comments",
-  "no-comments": "There are no comments"
+  "no-comments": "There are no comments",
+  "send": "Send",
+  "enter-comment": "Enter the comment text"
 }
