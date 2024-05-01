@@ -3,11 +3,14 @@ import { useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
+import { useSelector } from 'react-redux';
 
-import { sidebarItemList } from '../model/items';
+import { getSidebarItems } from '../model/selectors/getSidebarItems';
 import { SidebarItem } from './SidebarItem';
 
 export const Sidebar = () => {
+  const sidebarItemList = useSelector(getSidebarItems);
+
   const [collapsed, setCollapsed] = useState(true);
 
   const bg = useColorModeValue('teal.50', 'teal.700');
