@@ -51,6 +51,7 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/no-dynamic-delete': 'off',
+    '@typescript-eslint/consistent-type-assertions': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'react/no-deprecated': 'off',

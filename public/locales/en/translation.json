@@ -41,5 +41,7 @@
   "comments": "Comments",
   "no-comments": "There are no comments",
   "send": "Send",
-  "enter-comment": "Enter the comment text"
+  "enter-comment": "Enter the comment text",
+  "read-more": "Read more...",
+  "back-to-list": "Back to list"
 }

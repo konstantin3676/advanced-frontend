@@ -5,7 +5,7 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
 
-import { SidebarItemType } from '../model/items';
+import { SidebarItemType } from '../model/types/sidebar';
 
 interface SidebarItemProps {
   item: SidebarItemType;
