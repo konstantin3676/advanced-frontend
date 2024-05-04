@@ -122,6 +122,7 @@ export const ArticleListItem = ({ article, view }: Props) => {
             <Image
               src={article.img}
               alt={article.title}
+              h={200}
               objectFit='cover'
               borderRadius='lg'
             />
@@ -131,6 +132,7 @@ export const ArticleListItem = ({ article, view }: Props) => {
               top={2}
               right={2}
               opacity={0}
+              color='white'
               transition='opacity 0.3s'
             >
               {article.createdAt}

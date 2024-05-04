@@ -79,7 +79,12 @@ export const ArticleDetails = ({ id }: Props) => {
     content = (
       <Flex direction='column' gap={6}>
         <Flex justify='center'>
-          <Image borderRadius='full' boxSize={28} src={article?.img} />
+          <Image
+            borderRadius='full'
+            objectFit='cover'
+            boxSize={28}
+            src={article?.img}
+          />
         </Flex>
         <Flex direction='column' gap={2}>
           <Heading as='h2' size='2xl'>
