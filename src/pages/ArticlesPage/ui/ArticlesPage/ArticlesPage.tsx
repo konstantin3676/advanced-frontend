@@ -1,4 +1,4 @@
-import { Container, Flex, Stack } from '@chakra-ui/react';
+import { Container, Stack } from '@chakra-ui/react';
 import {
   ArticleList,
   ArticleView,
@@ -11,9 +11,9 @@ import {
 import { useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { Page } from 'shared/ui/Page/Page';
 
 import {
-  getArticlesPageError,
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
@@ -23,6 +23,7 @@ import {
   getArticles,
 } from '../../model/slice/articlesPageSlice';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 
 const reducers: ReducerList = {
   articlesPage: articlesPageReducer,
@@ -31,7 +32,6 @@ const reducers: ReducerList = {
 const ArticlesPage = () => {
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticlesPageIsLoading);
-  const error = useSelector(getArticlesPageError);
   const view = useSelector(getArticlesPageView);
   const articles = useSelector(getArticles.selectAll);
 
@@ -39,25 +39,36 @@ const ArticlesPage = () => {
     dispatch(articlesPageActions.setView(view));
   };
 
+  const onLoadNextPart = () => {
+    dispatch(fetchNextArticlesPage());
+  };
+
   useEffect(() => {
-    dispatch(fetchArticlesList());
     dispatch(articlesPageActions.initState());
+    dispatch(
+      fetchArticlesList({
+        page: 1,
+      })
+    );
   }, [dispatch]);
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Container maxW='container.md'>
-        <Stack spacing={4} py={4}>
-          <ArticleViewSelector currentView={view} onViewClick={onChangeView} />
-          <Flex wrap='wrap' justify='space-between' gap={6}>
+      <Page onScrollEnd={onLoadNextPart}>
+        <Container maxW='container.md'>
+          <Stack spacing={4} py={4}>
+            <ArticleViewSelector
+              currentView={view}
+              onViewClick={onChangeView}
+            />
             <ArticleList
               isLoading={isLoading}
               view={view}
               articles={articles}
             />
-          </Flex>
-        </Stack>
-      </Container>
+          </Stack>
+        </Container>
+      </Page>
     </DynamicModuleLoader>
   );
 };

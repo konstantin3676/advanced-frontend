@@ -19,6 +19,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useEffect } from 'react';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
@@ -58,26 +59,28 @@ const ArticleDetailsPage = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Container maxW='container.md'>
-        <Flex direction='column' gap={6} py={4}>
-          <Box>
-            <Button
-              variant='link'
-              size='sm'
-              colorScheme='teal'
-              onClick={onBackToList}
-            >
-              {t('back-to-list')}
-            </Button>
-          </Box>
-          <ArticleDetails id={id} />
-          <Heading as='h3' size='md' fontWeight='semibold'>
-            {t('comments')}
-          </Heading>
-          <AddCommentForm handleSendComment={handleSendComment} />
-          <CommentList comments={comments} isLoading={commentsIsLoading} />
-        </Flex>
-      </Container>
+      <Page>
+        <Container maxW='container.md'>
+          <Flex direction='column' gap={6} py={4}>
+            <Box>
+              <Button
+                variant='link'
+                size='sm'
+                colorScheme='teal'
+                onClick={onBackToList}
+              >
+                {t('back-to-list')}
+              </Button>
+            </Box>
+            <ArticleDetails id={id} />
+            <Heading as='h3' size='md' fontWeight='semibold'>
+              {t('comments')}
+            </Heading>
+            <AddCommentForm handleSendComment={handleSendComment} />
+            <CommentList comments={comments} isLoading={commentsIsLoading} />
+          </Flex>
+        </Container>
+      </Page>
     </DynamicModuleLoader>
   );
 };

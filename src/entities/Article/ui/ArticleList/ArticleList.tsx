@@ -1,3 +1,5 @@
+import { Flex } from '@chakra-ui/react';
+
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { Article, ArticleView } from '../../model/types/article';
@@ -19,13 +21,14 @@ export const ArticleList = ({
   view = ArticleView.SMALL,
   isLoading,
 }: Props) => {
-  if (isLoading) {
-    return getSkeletons(view);
-  }
-
   const renderArticle = (article: Article) => (
     <ArticleListItem key={article.id} article={article} view={view} />
   );
 
-  return articles.length > 0 ? articles.map(renderArticle) : null;
+  return (
+    <Flex wrap='wrap' justify='space-between' gap={6}>
+      {articles.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading && getSkeletons(view)}
+    </Flex>
+  );
 };

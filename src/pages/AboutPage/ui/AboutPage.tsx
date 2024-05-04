@@ -1,10 +1,10 @@
-import { Box } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'shared/ui/Page/Page';
 
 const AboutPage = () => {
   const { t } = useTranslation();
 
-  return <Box>{t('about-us')}</Box>;
+  return <Page>{t('about-us')}</Page>;
 };
 
 export default AboutPage;

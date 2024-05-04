@@ -11,6 +11,7 @@ import {
   ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Page } from 'shared/ui/Page/Page';
 
 const reducers: ReducerList = {
   profile: profileReducer,
@@ -28,9 +29,11 @@ const ProfilePage = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Flex justify='center' pt={5}>
-        <EditableProfileCard />
-      </Flex>
+      <Page>
+        <Flex justify='center' pt={5}>
+          <EditableProfileCard />
+        </Flex>
+      </Page>
     </DynamicModuleLoader>
   );
 };
