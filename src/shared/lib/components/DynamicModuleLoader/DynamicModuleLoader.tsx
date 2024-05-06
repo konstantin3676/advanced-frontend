@@ -28,10 +28,16 @@ export const DynamicModuleLoader = ({
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getReducerMap();
+
     (Object.entries(reducers) as ReducerListEntry[]).forEach(
       ([name, reducer]) => {
-        store.reducerManager.add(name, reducer);
-        dispatch({ type: `@INIT ${name} reducer` });
+        const mounted = !!mountedReducers[name];
+
+        if (!mounted) {
+          store.reducerManager.add(name, reducer);
+          dispatch({ type: `@INIT ${name} reducer` });
+        }
       }
     );
 

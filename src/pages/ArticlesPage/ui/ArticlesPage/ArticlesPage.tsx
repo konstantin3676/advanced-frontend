@@ -22,8 +22,8 @@ import {
   articlesPageReducer,
   getArticles,
 } from '../../model/slice/articlesPageSlice';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
 const reducers: ReducerList = {
   articlesPage: articlesPageReducer,
@@ -44,16 +44,11 @@ const ArticlesPage = () => {
   };
 
   useEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(
-      fetchArticlesList({
-        page: 1,
-      })
-    );
+    dispatch(initArticlesPage());
   }, [dispatch]);
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onLoadNextPart}>
         <Container maxW='container.md'>
           <Stack spacing={4} py={4}>
