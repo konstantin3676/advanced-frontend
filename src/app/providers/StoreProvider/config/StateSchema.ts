@@ -10,11 +10,13 @@ import { UserSchema } from 'entities/User';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ProfileSchema } from 'features/EditableProfileCard';
+import { UISchema } from 'features/UI';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
   user: UserSchema;
+  ui: UISchema;
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;

@@ -114,6 +114,8 @@ export const ArticleDetails = ({ id }: Props) => {
   }, [dispatch, id]);
 
   return (
-    <DynamicModuleLoader reducers={reducer}>{content}</DynamicModuleLoader>
+    <DynamicModuleLoader reducers={reducer} removeAfterUnmount={false}>
+      {content}
+    </DynamicModuleLoader>
   );
 };

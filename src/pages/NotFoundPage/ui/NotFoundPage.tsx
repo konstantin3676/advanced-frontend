@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Center } from '@chakra-ui/react';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 
 export const NotFoundPage = () => {
   const { t } = useTranslation();
