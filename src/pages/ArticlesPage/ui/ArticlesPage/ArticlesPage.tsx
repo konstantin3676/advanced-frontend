@@ -1,9 +1,5 @@
 import { Container, Stack } from '@chakra-ui/react';
-import {
-  ArticleList,
-  ArticleView,
-  ArticleViewSelector,
-} from 'entities/Article';
+import { ArticleList } from 'entities/Article';
 import {
   DynamicModuleLoader,
   ReducerList,
@@ -12,18 +8,19 @@ import { useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'widgets/Page/Page';
+import { useSearchParams } from 'react-router-dom';
 
 import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import {
-  articlesPageActions,
   articlesPageReducer,
   getArticles,
 } from '../../model/slice/articlesPageSlice';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 
 const reducers: ReducerList = {
   articlesPage: articlesPageReducer,
@@ -31,31 +28,25 @@ const reducers: ReducerList = {
 
 const ArticlesPage = () => {
   const dispatch = useAppDispatch();
+  const [searchParams] = useSearchParams();
   const isLoading = useSelector(getArticlesPageIsLoading);
   const view = useSelector(getArticlesPageView);
   const articles = useSelector(getArticles.selectAll);
-
-  const onChangeView = (view: ArticleView) => {
-    dispatch(articlesPageActions.setView(view));
-  };
 
   const onLoadNextPart = () => {
     dispatch(fetchNextArticlesPage());
   };
 
   useEffect(() => {
-    dispatch(initArticlesPage());
-  }, [dispatch]);
+    dispatch(initArticlesPage(searchParams));
+  }, [dispatch, searchParams]);
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onLoadNextPart}>
         <Container maxW='container.md'>
           <Stack spacing={4} py={4}>
-            <ArticleViewSelector
-              currentView={view}
-              onViewClick={onChangeView}
-            />
+            <ArticlesPageFilters />
             <ArticleList
               isLoading={isLoading}
               view={view}

@@ -87,8 +87,8 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://kbfblog.com/wp-content/uploads/2021/10/article-03440000002019214749270.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 4022,
+      "createdAt": "14.04.2022",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -157,8 +157,8 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://i.morioh.com/2023/06/06/c83aeebb.webp",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 5034,
+      "createdAt": "26.11.2023",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -224,13 +224,13 @@
     },
     {
       "id": "4",
-      "title": "Javascript news",
+      "title": "Economics news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://apprand.com/wp-naughtycontent/uploads/2015/08/maxresdefault.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 567,
+      "createdAt": "26.05.2024",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -246,13 +246,13 @@
     },
     {
       "id": "5",
-      "title": "Python news",
+      "title": "Science news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://kbfblog.com/wp-content/uploads/2021/10/article-03440000002019214749270.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 4589,
+      "createdAt": "16.03.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -271,8 +271,8 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://i.morioh.com/2023/06/06/c83aeebb.webp",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 123,
+      "createdAt": "26.06.2022",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -293,8 +293,8 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://apprand.com/wp-naughtycontent/uploads/2015/08/maxresdefault.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 102,
+      "createdAt": "26.02.2023",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -315,10 +315,10 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://kbfblog.com/wp-content/uploads/2021/10/article-03440000002019214749270.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1023,
+      "createdAt": "26.05.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -337,10 +337,10 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://i.morioh.com/2023/06/06/c83aeebb.webp",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1562,
+      "createdAt": "13.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -359,8 +359,8 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://apprand.com/wp-naughtycontent/uploads/2015/08/maxresdefault.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 2822,
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -382,9 +382,9 @@
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://kbfblog.com/wp-content/uploads/2021/10/article-03440000002019214749270.jpg",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "21.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -447,8 +447,8 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://kbfblog.com/wp-content/uploads/2021/10/article-03440000002019214749270.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 4522,
+      "createdAt": "26.12.2022",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -469,10 +469,10 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://i.morioh.com/2023/06/06/c83aeebb.webp",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 112,
+      "createdAt": "18.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -491,8 +491,8 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://apprand.com/wp-naughtycontent/uploads/2015/08/maxresdefault.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1067,
+      "createdAt": "26.07.2022",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -513,10 +513,10 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://kbfblog.com/wp-content/uploads/2021/10/article-03440000002019214749270.jpg",
-      "views": 1022,
+      "views": 1024,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -535,8 +535,8 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://i.morioh.com/2023/06/06/c83aeebb.webp",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 3922,
+      "createdAt": "27.02.2022",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -557,10 +557,10 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://apprand.com/wp-naughtycontent/uploads/2015/08/maxresdefault.jpg",
-      "views": 1022,
+      "views": 12,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -601,8 +601,8 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://i.morioh.com/2023/06/06/c83aeebb.webp",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 672,
+      "createdAt": "25.02.2022",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -648,7 +648,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -670,7 +670,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -714,7 +714,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -736,7 +736,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -758,7 +758,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",

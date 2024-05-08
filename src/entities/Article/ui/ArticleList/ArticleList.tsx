@@ -1,4 +1,5 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -21,13 +22,19 @@ export const ArticleList = ({
   view = ArticleView.SMALL,
   isLoading,
 }: Props) => {
+  const { t } = useTranslation();
+
   const renderArticle = (article: Article) => (
     <ArticleListItem key={article.id} article={article} view={view} />
   );
 
+  if (!isLoading && articles.length === 0) {
+    return <Text>{t('articles-not-found')}</Text>;
+  }
+
   return (
     <Flex wrap='wrap' justify='space-between' gap={6}>
-      {articles.length > 0 ? articles.map(renderArticle) : null}
+      {articles.length > 0 && articles.map(renderArticle)}
       {isLoading && getSkeletons(view)}
     </Flex>
   );

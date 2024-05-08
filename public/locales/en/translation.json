@@ -43,5 +43,18 @@
   "send": "Send",
   "enter-comment": "Enter the comment text",
   "read-more": "Read more...",
-  "back-to-list": "Back to list"
+  "back-to-list": "Back to list",
+  "search": "Search",
+  "sort": "Sort by",
+  "by": "Direction",
+  "asc": "Ascending",
+  "desc": "Descending",
+  "creation-date": "Creation date",
+  "title": "Title",
+  "views": "Views",
+  "all": "All",
+  "it": "IT",
+  "science": "Science",
+  "economics": "Economics",
+  "articles-not-found": "Articles not found"
 }

@@ -53,7 +53,7 @@ export const Page = ({ children, onScrollEnd }: Props) => {
       onScroll={onScroll}
     >
       {children}
-      <Box ref={triggerRef} />
+      {onScrollEnd && <Box h={2} ref={triggerRef} />}
     </Box>
   );
 };

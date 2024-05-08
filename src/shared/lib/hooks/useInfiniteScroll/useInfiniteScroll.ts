@@ -19,7 +19,7 @@ export const useInfiniteScroll = ({
     if (triggerElement && wrapperElement && callback) {
       const options = {
         root: wrapperElement,
-        rootMargin: '0px',
+        rootMargin: '1px',
         threshold: 1.0,
       };
 
