@@ -6,7 +6,7 @@ import {
   Flex,
   Heading,
 } from '@chakra-ui/react';
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -21,16 +21,17 @@ import { AddCommentForm } from 'features/AddCommentForm';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
 
+import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
-import {
-  articleDetailsCommentsReducer,
-  getArticleComments,
-} from '../../model/slice/articleDetailsCommentsSlice';
+import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { getArticleRecommendations } from '../../model/slice/articleDetailsRecommendationsSlice';
+import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { articleDetailsPageReducer } from '../../model/slice';
 
 const reducers: ReducerList = {
-  articleDetailsComments: articleDetailsCommentsReducer,
+  articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = () => {
@@ -40,6 +41,10 @@ const ArticleDetailsPage = () => {
   const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+  const recommendations = useSelector(getArticleRecommendations.selectAll);
+  const recommendationsIsLoading = useSelector(
+    getArticleRecommendationsIsLoading
+  );
 
   const onBackToList = () => {
     navigate(RoutePath.articles);
@@ -51,6 +56,7 @@ const ArticleDetailsPage = () => {
 
   useEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
+    dispatch(fetchArticleRecommendations());
   }, [dispatch, id]);
 
   if (!id) {
@@ -73,6 +79,17 @@ const ArticleDetailsPage = () => {
               </Button>
             </Box>
             <ArticleDetails id={id} />
+            <Heading as='h3' size='md' fontWeight='semibold'>
+              {t('recommend')}
+            </Heading>
+            <ArticleList
+              articles={recommendations}
+              isLoading={recommendationsIsLoading}
+              wrap='nowrap'
+              overflowX='auto'
+              overflowY='hidden'
+              target='_blank'
+            />
             <Heading as='h3' size='md' fontWeight='semibold'>
               {t('comments')}
             </Heading>

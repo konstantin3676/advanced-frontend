@@ -1,14 +1,15 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex, FlexProps, Text } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { Article, ArticleView } from '../../model/types/article';
 
-interface Props {
+interface Props extends FlexProps {
   articles: Article[];
   view?: ArticleView;
   isLoading?: boolean;
+  target?: React.HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => {
@@ -21,11 +22,18 @@ export const ArticleList = ({
   articles,
   view = ArticleView.SMALL,
   isLoading,
+  target,
+  ...flexProps
 }: Props) => {
   const { t } = useTranslation();
 
   const renderArticle = (article: Article) => (
-    <ArticleListItem key={article.id} article={article} view={view} />
+    <ArticleListItem
+      key={article.id}
+      article={article}
+      view={view}
+      target={target}
+    />
   );
 
   if (!isLoading && articles.length === 0) {
@@ -33,7 +41,7 @@ export const ArticleList = ({
   }
 
   return (
-    <Flex wrap='wrap' justify='space-between' gap={6}>
+    <Flex wrap='wrap' justify='space-between' gap={6} {...flexProps}>
       {articles.length > 0 && articles.map(renderArticle)}
       {isLoading && getSkeletons(view)}
     </Flex>

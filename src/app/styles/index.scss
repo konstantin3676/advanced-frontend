@@ -3,3 +3,17 @@
   --sidebar-width: 200px;
   --sidebar-width-collapsed: 80px;
 }
+
+*::-webkit-scrollbar {
+  width: 12px; /* ширина scrollbar */
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--chakra-colors-teal-50); /* цвет дорожки */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--chakra-colors-teal-500); /* цвет плашки */
+  border: 3px solid var(--chakra-colors-teal-500); /* padding вокруг плашки */
+}
