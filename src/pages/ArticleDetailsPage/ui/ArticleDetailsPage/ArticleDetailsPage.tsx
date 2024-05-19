@@ -1,15 +1,8 @@
-import {
-  Box,
-  Button,
-  Center,
-  Container,
-  Flex,
-  Heading,
-} from '@chakra-ui/react';
+import { Center, Container, Flex, Heading } from '@chakra-ui/react';
 import { ArticleDetails, ArticleList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import {
   DynamicModuleLoader,
   ReducerList,
@@ -18,9 +11,9 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useEffect } from 'react';
 import { AddCommentForm } from 'features/AddCommentForm';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
 
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
@@ -37,7 +30,6 @@ const reducers: ReducerList = {
 const ArticleDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
@@ -45,10 +37,6 @@ const ArticleDetailsPage = () => {
   const recommendationsIsLoading = useSelector(
     getArticleRecommendationsIsLoading
   );
-
-  const onBackToList = () => {
-    navigate(RoutePath.articles);
-  };
 
   const handleSendComment = (text: string) => {
     dispatch(addCommentForArticle(text));
@@ -68,16 +56,7 @@ const ArticleDetailsPage = () => {
       <Page>
         <Container maxW='container.md'>
           <Flex direction='column' gap={6} py={4}>
-            <Box>
-              <Button
-                variant='link'
-                size='sm'
-                colorScheme='teal'
-                onClick={onBackToList}
-              >
-                {t('back-to-list')}
-              </Button>
-            </Box>
+            <ArticleDetailsPageHeader />
             <ArticleDetails id={id} />
             <Heading as='h3' size='md' fontWeight='semibold'>
               {t('recommend')}

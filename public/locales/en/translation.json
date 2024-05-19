@@ -57,5 +57,9 @@
   "science": "Science",
   "economics": "Economics",
   "articles-not-found": "Articles not found",
-  "recommend": "Recommend"
+  "recommend": "Recommend",
+  "article-editing": "Article editing with ID ",
+  "article-adding": "New article adding",
+  "app": "App",
+  "add-article": "Add article"
 }

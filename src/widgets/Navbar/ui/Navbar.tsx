@@ -2,15 +2,19 @@ import {
   Button,
   Flex,
   FlexProps,
+  Heading,
+  Link as ChakraLink,
   Spacer,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 export const Navbar = () => {
   const bg = useColorModeValue('teal.100', 'teal.800');
@@ -36,6 +40,7 @@ export const Navbar = () => {
     <Flex
       as='header'
       align='center'
+      justify='space-between'
       px={5}
       h='var(--navbar-height)'
       bg={bg}
@@ -46,7 +51,19 @@ export const Navbar = () => {
   if (authData) {
     return (
       <Header>
-        <Spacer />
+        <Flex align='center' justify='space-between' maxW={295} w='100%'>
+          <Heading as='h1' size='lg'>
+            {t('app')}
+          </Heading>
+          <ChakraLink
+            as={ReactRouterLink}
+            to={RoutePath.article_create}
+            fontWeight={600}
+            color='teal.600'
+          >
+            {t('add-article')}
+          </ChakraLink>
+        </Flex>
         <Button variant='ghost' colorScheme='teal' onClick={onLogout}>
           {t('logout')}
         </Button>

@@ -57,5 +57,9 @@
   "science": "Наука",
   "economics": "Экономика",
   "articles-not-found": "Статьи не найдены",
-  "recommend": "Рекомендуем"
+  "recommend": "Рекомендуем",
+  "article-editing": "Редактирование статьи с ID ",
+  "article-adding": "Создание новой статьи",
+  "app": "App",
+  "add-article": "Создать статью"
 }
