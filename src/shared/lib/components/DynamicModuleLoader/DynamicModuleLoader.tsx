@@ -6,7 +6,8 @@ import {
 } from 'app/providers/StoreProvider';
 import { useEffect } from 'react';
 import { useStore } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+
+import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch';
 
 export type ReducerList = {
   [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;

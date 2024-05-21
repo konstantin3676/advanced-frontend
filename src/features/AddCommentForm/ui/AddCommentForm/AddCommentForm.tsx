@@ -11,10 +11,7 @@ import {
   addCommentFormActions,
   addCommentFormReducer,
 } from '../../modal/slice/addCommentFormSlice';
-import {
-  getAddCommentFormError,
-  getAddCommentFormText,
-} from '../../modal/selectors/addCommentFormSelectors';
+import { getAddCommentFormText } from '../../modal/selectors/addCommentFormSelectors';
 
 const reducers: ReducerList = {
   addCommentForm: addCommentFormReducer,
@@ -28,7 +25,6 @@ const AddCommentForm = ({ handleSendComment }: AddCommentFormProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const text = useSelector(getAddCommentFormText);
-  const error = useSelector(getAddCommentFormError);
 
   const handleChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     dispatch(addCommentFormActions.setText(e.target.value));

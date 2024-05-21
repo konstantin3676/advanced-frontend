@@ -30,7 +30,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'i18next'],
+  plugins: ['react', 'i18next', 'advanced-frontend'],
   rules: {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/semi': 'off',
@@ -59,5 +59,6 @@ module.exports = {
     'react/display-name': 'off',
     'n/handle-callback-err': 'off',
     'multiline-ternary': 'off',
+    'advanced-frontend/path-checker': 'error',
   },
 };

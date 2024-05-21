@@ -16,10 +16,10 @@ import {
 } from '@chakra-ui/react';
 import { MdOutlineVisibility } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
-import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {
   Article,
   ArticleBlockType,
