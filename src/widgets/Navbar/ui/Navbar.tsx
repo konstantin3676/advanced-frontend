@@ -1,9 +1,11 @@
 import {
+  Avatar,
   Button,
   Flex,
   FlexProps,
   Heading,
   Link as ChakraLink,
+  MenuButton,
   Spacer,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -15,6 +17,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 
 export const Navbar = () => {
   const bg = useColorModeValue('teal.100', 'teal.800');
@@ -64,9 +67,25 @@ export const Navbar = () => {
             {t('add-article')}
           </ChakraLink>
         </Flex>
-        <Button variant='ghost' colorScheme='teal' onClick={onLogout}>
-          {t('logout')}
-        </Button>
+        <Dropdown
+          items={[
+            {
+              content: t('profile'),
+              href: `${RoutePath.profile}${authData.id}`,
+            },
+            {
+              content: t('logout'),
+              onClick: onLogout,
+            },
+          ]}
+        >
+          <MenuButton
+            as={Avatar}
+            size='sm'
+            src={authData.avatar}
+            cursor='pointer'
+          ></MenuButton>
+        </Dropdown>
       </Header>
     );
   }
