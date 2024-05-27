@@ -1,16 +1,14 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import {
   EditableProfileCard,
-  fetchProfileData,
   profileReducer,
 } from 'features/EditableProfileCard';
-import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import {
   DynamicModuleLoader,
   ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from 'widgets/Page/Page';
 
 const reducers: ReducerList = {
@@ -18,20 +16,18 @@ const reducers: ReducerList = {
 };
 
 const ProfilePage = () => {
-  const dispatch = useAppDispatch();
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
 
-  useEffect(() => {
-    if (id) {
-      dispatch(fetchProfileData(id));
-    }
-  }, [dispatch, id]);
+  if (!id) {
+    return <Text>{t('profile-not-found')}</Text>;
+  }
 
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page>
         <Flex justify='center' pt={5}>
-          <EditableProfileCard />
+          <EditableProfileCard id={id} />
         </Flex>
       </Page>
     </DynamicModuleLoader>

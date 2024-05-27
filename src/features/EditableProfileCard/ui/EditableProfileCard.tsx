@@ -5,6 +5,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 import { ValidateProfileError } from '../model/types/profile';
 import { getProfileForm } from '../model/selectors/getProfileForm/getProfileForm';
@@ -14,8 +15,13 @@ import { getProfileReadonly } from '../model/selectors/getProfileReadonly/getPro
 import { getProfileIsLoading } from '../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileError } from '../model/selectors/getProfileError/getProfileError';
 import { EditableProfileCardHeader } from './EditableProfileCardHeader/EditableProfileCardHeader';
+import { fetchProfileData } from '../model/services/fetchProfileData/fetchProfileData';
 
-export const EditableProfileCard = () => {
+interface Props {
+  id: string;
+}
+
+export const EditableProfileCard = ({ id }: Props) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
   const formData = useSelector(getProfileForm);
@@ -63,6 +69,10 @@ export const EditableProfileCard = () => {
   const onChangeCountry = (country?: Country) => {
     dispatch(profileActions.updateProfile({ country }));
   };
+
+  useEffect(() => {
+    dispatch(fetchProfileData(id));
+  }, [dispatch, id]);
 
   return (
     <Card minW='lg' minH='xs' variant='outline'>

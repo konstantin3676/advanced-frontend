@@ -61,5 +61,7 @@
   "article-editing": "Редактирование статьи с ID ",
   "article-adding": "Создание новой статьи",
   "app": "App",
-  "add-article": "Создать статью"
+  "add-article": "Создать статью",
+  "articles-loading-error": "Ошибка при загрузке статей",
+  "profile-not-found": "Профиль не найден"
 }
