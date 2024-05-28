@@ -7,7 +7,7 @@ import { Country } from 'entities/Country';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 
-import { ValidateProfileError } from '../model/types/profile';
+import { ValidateProfileError } from '../model/consts/consts';
 import { getProfileForm } from '../model/selectors/getProfileForm/getProfileForm';
 import { getProfileValidateErrors } from '../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { profileActions } from '../model/slice/profileSlice';

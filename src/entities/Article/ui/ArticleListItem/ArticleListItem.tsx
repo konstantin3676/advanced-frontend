@@ -20,12 +20,8 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import {
-  Article,
-  ArticleBlockType,
-  ArticleTextBlock,
-  ArticleView,
-} from '../../model/types/article';
+import { Article, ArticleTextBlock } from '../../model/types/article';
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 
 interface Props {
   article: Article;

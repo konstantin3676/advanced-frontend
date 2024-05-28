@@ -10,7 +10,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 
-import { ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/consts';
 
 interface Props {
   view: ArticleView;
