@@ -10,7 +10,12 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
+} from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -24,6 +29,9 @@ export const Navbar = () => {
   const { t } = useTranslation();
   const authData = useSelector(getUserAuthData);
   const dispatch = useAppDispatch();
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
+  const isAdminPanelAvailable = isAdmin || isManager;
 
   const [isAuthModal, setAuthModal] = useState(false);
 
@@ -69,6 +77,14 @@ export const Navbar = () => {
         </Flex>
         <Dropdown
           items={[
+            ...(isAdminPanelAvailable
+              ? [
+                  {
+                    content: t('admin'),
+                    href: RoutePath.admin_panel,
+                  },
+                ]
+              : []),
             {
               content: t('profile'),
               href: `${RoutePath.profile}${authData.id}`,

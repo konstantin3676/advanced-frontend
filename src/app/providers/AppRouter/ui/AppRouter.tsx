@@ -12,13 +12,17 @@ export const AppRouter = () => {
     <Suspense fallback={<PageLoader />}>
       <Routes>
         {Object.values(routeConfig).map(
-          ({ path, element, authOnly }: AppRoutesProps) => {
+          ({ path, element, authOnly, roles }: AppRoutesProps) => {
             return (
               <Route
                 key={path}
                 path={path}
                 element={
-                  authOnly ? <RequireAuth>{element}</RequireAuth> : element
+                  authOnly ? (
+                    <RequireAuth roles={roles}>{element}</RequireAuth>
+                  ) : (
+                    element
+                  )
                 }
               />
             );

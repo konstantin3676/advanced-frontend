@@ -63,5 +63,8 @@
   "app": "App",
   "add-article": "Add article",
   "articles-loading-error": "Articles loading error",
-  "profile-not-found": "Profile not found"
+  "profile-not-found": "Profile not found",
+  "admin-panel": "Admin panel",
+  "admin": "Admin",
+  "forbidden": "You do not have access to this page"
 }

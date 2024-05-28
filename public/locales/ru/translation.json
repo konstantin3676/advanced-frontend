@@ -63,5 +63,8 @@
   "app": "App",
   "add-article": "Создать статью",
   "articles-loading-error": "Ошибка при загрузке статей",
-  "profile-not-found": "Профиль не найден"
+  "profile-not-found": "Профиль не найден",
+  "admin-panel": "Админ панель",
+  "admin": "Админка",
+  "forbidden": "У вас нет доступа к этой странице"
 }
