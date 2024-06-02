@@ -1,37 +1,26 @@
 import {
-  Avatar,
   Button,
-  Flex,
-  FlexProps,
   Heading,
+  HStack,
   Link as ChakraLink,
-  MenuButton,
   Spacer,
+  StackProps,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import {
-  getUserAuthData,
-  isUserAdmin,
-  isUserManager,
-  userActions,
-} from 'entities/User';
+import { getUserAuthData } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { NotificationButton } from 'features/NotificationButton';
+import { AvatarDropdown } from 'features/AvatarDropdown';
 
 export const Navbar = () => {
   const bg = useColorModeValue('teal.100', 'teal.800');
   const { t } = useTranslation();
   const authData = useSelector(getUserAuthData);
-  const dispatch = useAppDispatch();
-  const isAdmin = useSelector(isUserAdmin);
-  const isManager = useSelector(isUserManager);
-  const isAdminPanelAvailable = isAdmin || isManager;
 
   const [isAuthModal, setAuthModal] = useState(false);
 
@@ -43,12 +32,8 @@ export const Navbar = () => {
     setAuthModal(true);
   };
 
-  const onLogout = () => {
-    dispatch(userActions.logout());
-  };
-
-  const Header = (props: FlexProps) => (
-    <Flex
+  const Header = (props: StackProps) => (
+    <HStack
       as='header'
       align='center'
       justify='space-between'
@@ -62,7 +47,7 @@ export const Navbar = () => {
   if (authData) {
     return (
       <Header>
-        <Flex align='center' justify='space-between' maxW={295} w='100%'>
+        <HStack align='center' justify='space-between' maxW={295} w='100%'>
           <Heading as='h1' size='lg'>
             {t('app')}
           </Heading>
@@ -74,34 +59,11 @@ export const Navbar = () => {
           >
             {t('add-article')}
           </ChakraLink>
-        </Flex>
-        <Dropdown
-          items={[
-            ...(isAdminPanelAvailable
-              ? [
-                  {
-                    content: t('admin'),
-                    href: RoutePath.admin_panel,
-                  },
-                ]
-              : []),
-            {
-              content: t('profile'),
-              href: `${RoutePath.profile}${authData.id}`,
-            },
-            {
-              content: t('logout'),
-              onClick: onLogout,
-            },
-          ]}
-        >
-          <MenuButton
-            as={Avatar}
-            size='sm'
-            src={authData.avatar}
-            cursor='pointer'
-          ></MenuButton>
-        </Dropdown>
+        </HStack>
+        <HStack align='center' spacing={2}>
+          <NotificationButton />
+          <AvatarDropdown />
+        </HStack>
       </Header>
     );
   }
