@@ -1,12 +1,12 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { getUserAuthData } from 'entities/User';
+import { getUserAuthData } from '@/entities/User';
 import {
   MdInfoOutline,
   MdOutlineAccountCircle,
   MdOutlineArticle,
   MdOutlineHome,
 } from 'react-icons/md';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 import { SidebarItemType } from '../types/sidebar';
 

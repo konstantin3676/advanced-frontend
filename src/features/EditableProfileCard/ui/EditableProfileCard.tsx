@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import { ProfileCard } from 'entities/Profile';
+import { ProfileCard } from '@/entities/Profile';
 import { Alert, AlertIcon, Card } from '@chakra-ui/react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 

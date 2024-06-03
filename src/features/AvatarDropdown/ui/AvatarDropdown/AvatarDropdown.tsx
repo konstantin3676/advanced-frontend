@@ -4,12 +4,12 @@ import {
   isUserAdmin,
   isUserManager,
   userActions,
-} from 'entities/User';
+} from '@/entities/User';
 import { t } from 'i18next';
 import { useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Dropdown } from '@/shared/ui/Dropdown/Dropdown';
 
 export const AvatarDropdown = () => {
   const dispatch = useAppDispatch();

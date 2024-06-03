@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Heading } from '@chakra-ui/react';
-import { ArticleList } from 'entities/Article';
+import { ArticleList } from '@/entities/Article';
 
 import { useGetArticleRecommendationsListQuery } from '../../api/articleRecommendationsApi';
 

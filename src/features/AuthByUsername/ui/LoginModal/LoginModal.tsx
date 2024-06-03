@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { ModalDialog } from 'shared/ui/ModalDialog/ModalDialog';
+import { ModalDialog } from '@/shared/ui/ModalDialog/ModalDialog';
 import { Suspense } from 'react';
-import { Fallback } from 'widgets/Fallback';
+import { Fallback } from '@/widgets/Fallback';
 
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 

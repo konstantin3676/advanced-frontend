@@ -1,13 +1,13 @@
 import { Center, Container, Flex } from '@chakra-ui/react';
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails } from '@/entities/Article';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import {
   DynamicModuleLoader,
   ReducerList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from 'widgets/Page/Page';
-import { ArticleRecommendationsList } from 'features/ArticleRecommendationsList';
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Page } from '@/widgets/Page/Page';
+import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slice';

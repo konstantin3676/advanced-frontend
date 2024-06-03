@@ -9,8 +9,8 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import { Country, CountrySelect } from 'entities/Country';
-import { Currency, CurrencySelect } from 'entities/Currency';
+import { Country, CountrySelect } from '@/entities/Country';
+import { Currency, CurrencySelect } from '@/entities/Currency';
 import { useTranslation } from 'react-i18next';
 
 import { Profile } from '../../model/types/profile';

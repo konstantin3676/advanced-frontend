@@ -1,4 +1,4 @@
-import { ArticleList } from 'entities/Article';
+import { ArticleList } from '@/entities/Article';
 import { useSelector } from 'react-redux';
 import { Text } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';

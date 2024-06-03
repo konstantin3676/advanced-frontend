@@ -1,12 +1,12 @@
 import { Box } from '@chakra-ui/react';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { getUIScrollByPath, uiActions } from 'features/UI';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getUIScrollByPath, uiActions } from '@/features/UI';
 import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
-import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 
 interface Props {
   children: React.ReactNode;

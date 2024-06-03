@@ -1,11 +1,11 @@
 import './shared/config/i18n/i18n';
 
-import { theme } from 'app/styles/theme';
+import { theme } from '@/app/styles/theme';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
-import { ErrorBoundary } from 'app/providers/ErrorBoundary';
-import { StoreProvider } from 'app/providers/StoreProvider';
+import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 
 import { App } from './app/App';
 

@@ -8,14 +8,14 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { getUserAuthData } from 'entities/User';
-import { LoginModal } from 'features/AuthByUsername';
+import { getUserAuthData } from '@/entities/User';
+import { LoginModal } from '@/features/AuthByUsername';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { NotificationButton } from 'features/NotificationButton';
-import { AvatarDropdown } from 'features/AvatarDropdown';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { NotificationButton } from '@/features/NotificationButton';
+import { AvatarDropdown } from '@/features/AvatarDropdown';
 
 export const Navbar = () => {
   const bg = useColorModeValue('teal.100', 'teal.800');

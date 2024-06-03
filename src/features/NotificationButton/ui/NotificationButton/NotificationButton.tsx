@@ -9,7 +9,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@chakra-ui/react';
-import { NotificationList } from 'entities/Notification';
+import { NotificationList } from '@/entities/Notification';
 import { useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { MdOutlineNotifications } from 'react-icons/md';
