@@ -59,6 +59,6 @@ module.exports = {
     'react/display-name': 'off',
     'n/handle-callback-err': 'off',
     'multiline-ternary': 'off',
-    'advanced-frontend/path-checker': 'error',
+    'advanced-frontend/path-checker': ['error', { alias: '@' }],
   },
 };
