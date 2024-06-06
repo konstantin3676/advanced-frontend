@@ -32,6 +32,7 @@ interface Props {
   hasFeedback?: boolean;
   onAccept?: (starsCount: number, feedback?: string) => void;
   onCancel?: (starsCount: number) => void;
+  rate?: number;
 }
 
 export const Rating = ({
@@ -40,11 +41,12 @@ export const Rating = ({
   hasFeedback,
   onAccept,
   onCancel,
+  rate = 0,
 }: Props) => {
   const { t } = useTranslation();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [starsCount, setStarsCount] = useState(0);
+  const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
 
   const onSelectStars = (selectedStarsCount: number) => {
@@ -73,13 +75,17 @@ export const Rating = ({
         <CardHeader>
           <Center>
             <Heading as='h4' size='md' fontWeight='medium'>
-              {title}
+              {starsCount ? t('thanks-for-review') : title}
             </Heading>
           </Center>
         </CardHeader>
         <CardBody>
           <Center>
-            <StarRating size={12} onSelect={onSelectStars} />
+            <StarRating
+              selectedStars={starsCount}
+              size={12}
+              onSelect={onSelectStars}
+            />
           </Center>
         </CardBody>
       </Card>

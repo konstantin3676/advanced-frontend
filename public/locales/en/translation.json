@@ -68,5 +68,8 @@
   "admin": "Admin",
   "forbidden": "You do not have access to this page",
   "notifications": "Notifications",
-  "your-feedback": "Your feedback"
+  "your-feedback": "Your feedback",
+  "rate-article": "Rate the article",
+  "leave-review": "Leave your feedback about the article, it will help to improve the quality",
+  "thanks-for-review": "Thanks for the assessment"
 }

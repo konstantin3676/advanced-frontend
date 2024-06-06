@@ -8,6 +8,7 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from '@/widgets/Page/Page';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
+import { ArticleRating } from '@/features/ArticleRating';
 
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slice';
@@ -32,6 +33,7 @@ const ArticleDetailsPage = () => {
           <Flex direction='column' gap={6} py={4}>
             <ArticleDetailsPageHeader />
             <ArticleDetails id={id} />
+            <ArticleRating articleId={id} />
             <ArticleRecommendationsList />
             <ArticleDetailsComments id={id} />
           </Flex>
