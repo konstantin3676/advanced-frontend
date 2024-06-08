@@ -60,5 +60,6 @@ module.exports = {
     'n/handle-callback-err': 'off',
     'multiline-ternary': 'off',
     'advanced-frontend/path-checker': ['error', { alias: '@' }],
+    'advanced-frontend/public-api-imports': ['error', { alias: '@' }],
   },
 };
