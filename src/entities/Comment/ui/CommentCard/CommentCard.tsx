@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 
 import { Comment } from '../../model/types/comment';
 
@@ -24,10 +24,7 @@ export const CommentCard = ({ comment }: Props) => {
   return (
     <Card variant='outline'>
       <CardHeader>
-        <ChakraLink
-          as={ReactRouterLink}
-          to={`${RoutePath.profile}${comment.user.id}`}
-        >
+        <ChakraLink as={ReactRouterLink} to={getRouteProfile(comment.user.id)}>
           <Flex align='center' gap={4}>
             {comment.user.avatar && (
               <Image

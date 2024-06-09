@@ -9,7 +9,7 @@ import { t } from 'i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Dropdown } from '@/shared/ui/Dropdown';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 
 export const AvatarDropdown = () => {
   const dispatch = useAppDispatch();
@@ -33,13 +33,13 @@ export const AvatarDropdown = () => {
           ? [
               {
                 content: t('admin'),
-                href: RoutePath.admin_panel,
+                href: getRouteAdminPanel(),
               },
             ]
           : []),
         {
           content: t('profile'),
-          href: `${RoutePath.profile}${authData.id}`,
+          href: getRouteProfile(authData.id),
         },
         {
           content: t('logout'),

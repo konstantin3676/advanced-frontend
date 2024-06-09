@@ -17,7 +17,7 @@ import {
 import { MdOutlineVisibility } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { Article, ArticleTextBlock } from '../../model/types/article';
@@ -89,7 +89,7 @@ export const ArticleListItem = ({ article, view, target }: Props) => {
               size='sm'
               colorScheme='teal'
               as={ReactRouterLink}
-              to={`${RoutePath.article_details}${article.id}`}
+              to={getRouteArticleDetails(article.id)}
               target={target}
             >
               {t('read-more')}
@@ -145,7 +145,7 @@ export const ArticleListItem = ({ article, view, target }: Props) => {
             </Flex>
             <LinkOverlay
               as={ReactRouterLink}
-              to={`${RoutePath.article_details}${article.id}`}
+              to={getRouteArticleDetails(article.id)}
               target={target}
             >
               <Heading as='h3' size='md' fontWeight='semibold' noOfLines={1}>

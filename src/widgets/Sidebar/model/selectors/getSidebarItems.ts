@@ -6,19 +6,24 @@ import {
   MdOutlineArticle,
   MdOutlineHome,
 } from 'react-icons/md';
-import { RoutePath } from '@/shared/const/router';
+import {
+  getRouteAbout,
+  getRouteArticles,
+  getRouteMain,
+  getRouteProfile,
+} from '@/shared/const/router';
 
 import { SidebarItemType } from '../types/sidebar';
 
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
   const sidebarItemList: SidebarItemType[] = [
     {
-      path: RoutePath.main,
+      path: getRouteMain(),
       text: 'main',
       icon: MdOutlineHome,
     },
     {
-      path: RoutePath.about,
+      path: getRouteAbout(),
       text: 'about-us',
       icon: MdInfoOutline,
     },
@@ -27,13 +32,13 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
   if (userData) {
     sidebarItemList.push(
       {
-        path: `${RoutePath.profile}${userData.id}`,
+        path: getRouteProfile(userData.id),
         text: 'profile',
         icon: MdOutlineAccountCircle,
         authOnly: true,
       },
       {
-        path: RoutePath.articles,
+        path: getRouteArticles(),
         text: 'articles',
         icon: MdOutlineArticle,
         authOnly: true,

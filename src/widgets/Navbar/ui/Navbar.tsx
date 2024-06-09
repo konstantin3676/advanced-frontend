@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 export const Navbar = () => {
   const bg = useColorModeValue('teal.100', 'teal.800');
@@ -53,7 +53,7 @@ export const Navbar = () => {
           </Heading>
           <ChakraLink
             as={ReactRouterLink}
-            to={RoutePath.article_create}
+            to={getRouteArticleCreate()}
             fontWeight={600}
             color='teal.600'
           >
