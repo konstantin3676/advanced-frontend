@@ -1,8 +1,7 @@
+import { ArticleType } from '@/entities/Article';
 import { Tab, TabList, Tabs } from '@chakra-ui/react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import { ArticleType } from '../../model/consts/consts';
 
 interface Props {
   type: ArticleType;

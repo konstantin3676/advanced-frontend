@@ -1,7 +1,6 @@
 import { MdGridView, MdList } from 'react-icons/md';
 import { ButtonGroup, IconButton } from '@chakra-ui/react';
-
-import { ArticleView } from '../../model/consts/consts';
+import { ArticleView } from '@/entities/Article';
 
 const viewTypes = [
   {
