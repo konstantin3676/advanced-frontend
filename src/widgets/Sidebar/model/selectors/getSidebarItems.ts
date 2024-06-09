@@ -6,7 +6,7 @@ import {
   MdOutlineArticle,
   MdOutlineHome,
 } from 'react-icons/md';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 
 import { SidebarItemType } from '../types/sidebar';
 
