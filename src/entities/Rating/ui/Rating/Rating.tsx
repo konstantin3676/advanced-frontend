@@ -1,4 +1,4 @@
-import { StarRating } from '@/shared/ui/StarRating/StarRating';
+import { StarRating } from '@/shared/ui/StarRating';
 import {
   Button,
   Card,

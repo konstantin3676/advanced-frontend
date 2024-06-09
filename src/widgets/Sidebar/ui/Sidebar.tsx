@@ -1,8 +1,8 @@
 import { Flex, Icon, IconButton, useColorModeValue } from '@chakra-ui/react';
 import { useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-import { LangSwitcher } from '@/shared/ui/LangSwitcher/LangSwitcher';
-import { ThemeSwitcher } from '@/shared/ui/ThemeSwitcher/ThemeSwitcher';
+import { LangSwitcher } from '@/shared/ui/LangSwitcher';
+import { ThemeSwitcher } from '@/shared/ui/ThemeSwitcher';
 import { useSelector } from 'react-redux';
 
 import { getSidebarItems } from '../model/selectors/getSidebarItems';

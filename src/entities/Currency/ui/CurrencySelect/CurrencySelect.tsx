@@ -1,4 +1,4 @@
-import { Select } from '@/shared/ui/Select/Select';
+import { Select } from '@/shared/ui/Select';
 import { useTranslation } from 'react-i18next';
 
 import { Currency } from '../../model/types/currency';

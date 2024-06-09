@@ -8,7 +8,7 @@ import {
 import { t } from 'i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Dropdown } from '@/shared/ui/Dropdown/Dropdown';
+import { Dropdown } from '@/shared/ui/Dropdown';
 import { RoutePath } from '@/shared/const/router';
 
 export const AvatarDropdown = () => {
