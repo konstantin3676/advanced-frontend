@@ -61,5 +61,12 @@ module.exports = {
     'multiline-ternary': 'off',
     'advanced-frontend/path-checker': ['error', { alias: '@' }],
     'advanced-frontend/public-api-imports': ['error', { alias: '@' }],
+    'advanced-frontend/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider'],
+      },
+    ],
   },
 };
